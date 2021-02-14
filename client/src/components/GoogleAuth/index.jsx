@@ -30,7 +30,8 @@ const GoogleAuth = ({ isSignedIn, signIn, signOut }) => {
 
   const onAuthChange = (isSignedIn) => {
     if (isSignedIn) {
-      signIn();
+      const userId = auth.currentUser.get().getId();
+      signIn(userId);
     } else {
       signOut();
     }
@@ -55,7 +56,7 @@ const GoogleAuth = ({ isSignedIn, signIn, signOut }) => {
         className="auth-button"
         variant="outlined"
         color="primary"
-        onClick={() => auth.signIn()}
+        onClick={() => auth.signIn(auth)}
       >
         <img src={GoogleIcon} alt="google" /> 登入
       </Button>
