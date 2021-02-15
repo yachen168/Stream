@@ -27,6 +27,14 @@ export default {
       throw new Error(error.data);
     }
   },
+  async PUT(url, body) {
+    try {
+      const response = await backend.post(url, body);
+      return response.data;
+    } catch (error) {
+      throw new Error(error.data);
+    }
+  },
   async DELETE(url) {
     try {
       const response = await backend.delete(url);
