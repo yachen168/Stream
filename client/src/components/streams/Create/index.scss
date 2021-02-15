@@ -1,0 +1,12 @@
+.create-stream-page {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 50px;
+  .MuiFormControl-root + .MuiFormControl-root {
+    margin-top: 20px;
+  }
+
+  .MuiButtonBase-root {
+    margin-top: 40px;
+  }
+}
