@@ -1,11 +1,11 @@
-import { SIGN_IN, SIGN_OUT } from '../actions/actionTypes';
+import _ from 'lodash';
 import {
   FETCH_STREAMS,
   FETCH_STREAM,
   CREATE_STREAM,
   DELETE_STREAM,
   EDIT_STREAM,
-} from './actionTypes';
+} from '../actions/actionTypes';
 
 const INITIAL_STATE = {};
 
@@ -14,22 +14,23 @@ export default (state = INITIAL_STATE, action) => {
 
   switch (type) {
     case FETCH_STREAMS: {
-      return { ...state, isSignedIn: true, userId: payload };
+      return { ...state, ..._.mapKeys(payload, 'id') };
     }
 
     case FETCH_STREAM: {
-      return { ...state, [payload.streamId]: action.payload };
+      return { ...state, [payload.streamId]: payload };
     }
+
     case CREATE_STREAM: {
-      return { ...state, [payload.streamId]: action.payload };
+      return { ...state, [payload.streamId]: payload };
     }
 
     case EDIT_STREAM: {
-      return { ...state, [payload.streamId]: action.payload };
+      return { ...state, [payload.streamId]: payload };
     }
 
     case DELETE_STREAM: {
-      return { ...state, isSignedIn: true, userId: payload };
+      return _.omit(state, payload);
     }
 
     default: {
