@@ -23,7 +23,6 @@ const Create = ({ createStream }) => {
     validationSchema: validationSchema,
     onSubmit: (values) => {
       createStream(values);
-      alert(JSON.stringify(values, null, 2));
     },
   });
 
