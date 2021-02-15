@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import StreamCreate from './components/streams/Create';
-import StreamDelete from './components/streams/Delete';
-import StreamEdit from './components/streams/Edit';
-import StreamList from './components/streams/List';
-import StreamShow from './components/streams/Create';
+import Home from './views/Home';
+import StreamCreate from './views/StreamCreate';
+import StreamDelete from './views/StreamDelete';
+import StreamEdit from './views/StreamEdit';
+import StreamShow from './views/StreamShow';
 import Header from './components/Header';
 
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
     <div className="App">
       <BrowserRouter>
         <Header />
-        <Route path="/" exact component={StreamList} />
+        <Route path="/" exact component={Home} />
         <Route path="/streams/new" component={StreamCreate} />
         <Route path="/streams/delete" component={StreamDelete} />
         <Route path="/streams/edit" component={StreamEdit} />

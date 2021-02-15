@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createStream } from '../../../actions/streams';
+import { createStream } from '../../actions/streams';
 
 import { useFormik } from 'formik';
 import * as yup from 'yup';
@@ -14,7 +14,7 @@ const validationSchema = yup.object({
   description: yup.string('Enter description').required('Description is required'),
 });
 
-const Create = ({ createStream }) => {
+const StreamCreate = ({ createStream }) => {
   const formik = useFormik({
     initialValues: {
       title: '',
@@ -58,4 +58,4 @@ const Create = ({ createStream }) => {
 
 export default connect(null, {
   createStream,
-})(Create);
+})(StreamCreate);

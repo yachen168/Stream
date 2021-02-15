@@ -1,9 +1,10 @@
 .streams-list {
   max-width: 500px;
-  margin: 50px auto 0;
+  margin: 0 auto;
 
   h1 {
     margin-bottom: 10px;
+    font-size: 20px;
   }
 
   .stream-item {
@@ -15,6 +16,19 @@
 
     img {
       margin-right: 20px;
+    }
+
+    .stream-item-content {
+      flex: 5;
+    }
+
+    .title {
+      font-size: 18px;
+    }
+
+    .description {
+      font-weight: 400;
+      color: #666;
     }
   }
 
