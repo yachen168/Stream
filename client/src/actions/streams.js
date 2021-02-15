@@ -1,4 +1,5 @@
 import API from '../api/service';
+import history from '../history';
 import {
   FETCH_STREAMS,
   FETCH_STREAM,
@@ -24,6 +25,7 @@ export const createStream = (formData) => async (dispatch, getState) => {
   const response = await API.POST('/streams', { ...formData, userId });
 
   dispatch({ type: CREATE_STREAM, payload: response });
+  history.push('/');
 };
 
 export const editStream = (streamId, formData) => async (dispatch) => {
