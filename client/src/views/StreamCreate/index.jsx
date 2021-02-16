@@ -7,7 +7,7 @@ import * as yup from 'yup';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 
-import './index.scss';
+import { create_stream_page } from './index.module.scss';
 
 const validationSchema = yup.object({
   title: yup.string('Enter title').required('Title is required'),
@@ -27,7 +27,7 @@ const StreamCreate = ({ createStream }) => {
   });
 
   return (
-    <div className="create-stream-page">
+    <div className={create_stream_page}>
       <form onSubmit={formik.handleSubmit}>
         <TextField
           fullWidth

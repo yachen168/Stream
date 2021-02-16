@@ -2,11 +2,11 @@ import React from 'react';
 
 import StreamList from '../../components/StreamList';
 
-import './index.scss';
+import styles from './index.module.scss';
 
 const Home = () => {
   return (
-    <div className="home">
+    <div className={styles.home}>
       <StreamList></StreamList>
     </div>
   );

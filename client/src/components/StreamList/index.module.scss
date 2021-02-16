@@ -1,4 +1,4 @@
-.streams-list {
+.streams_list {
   max-width: 500px;
   margin: 0 auto;
 
@@ -7,7 +7,7 @@
     font-size: 20px;
   }
 
-  .stream-item {
+  .stream_item {
     display: flex;
     align-items: center;
     padding: 10px 20px;
@@ -18,7 +18,7 @@
       margin-right: 20px;
     }
 
-    .stream-item-content {
+    .stream_item_content {
       flex: 5;
     }
 
@@ -32,7 +32,7 @@
     }
   }
 
-  .stream-item + .stream-item {
+  .stream_item + .stream_item {
     margin-top: 15px;
   }
 }

@@ -6,7 +6,7 @@ import AdminButtons from '../../components/AdminButton';
 import CreateLink from '../../components/CreateLink';
 
 import CameraIcon from '../../images/camera.png';
-import './index.scss';
+import styles from './index.module.scss';
 
 const StreamList = ({ streams, fetchStreams, currentUserId, isSignedIn }) => {
   useEffect(() => {
@@ -24,15 +24,15 @@ const StreamList = ({ streams, fetchStreams, currentUserId, isSignedIn }) => {
   };
 
   return (
-    <div className="streams-list">
+    <div className={styles.streams_list}>
       <h1>影片清單</h1>
       {streams.map((stream) => {
         return (
-          <div className="stream-item" key={stream.id}>
+          <div className={styles.stream_item} key={stream.id}>
             <img src={CameraIcon} />
-            <div className="stream-item-content">
-              <h2 className="title">{stream.title}</h2>
-              <h4 className="description">{stream.description}</h4>
+            <div className={styles.stream_item_content}>
+              <h2 className={styles.title}>{stream.title}</h2>
+              <h4 className={styles.description}>{stream.description}</h4>
             </div>
             {renderAdminButtons(stream)}
           </div>

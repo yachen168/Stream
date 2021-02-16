@@ -1,12 +1,13 @@
-.create-stream-page {
+.create_stream_page {
   max-width: 500px;
   margin: 0 auto;
   margin-top: 50px;
-  .MuiFormControl-root + .MuiFormControl-root {
+
+  [class^='MuiFormControl-root'] + [class^='MuiFormControl-root'] {
     margin-top: 20px;
   }
 
-  .MuiButtonBase-root {
+  button {
     margin-top: 40px;
   }
 }

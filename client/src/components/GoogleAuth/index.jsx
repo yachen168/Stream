@@ -4,7 +4,7 @@ import { signIn, signOut } from '../../actions/auth';
 
 import Button from '@material-ui/core/Button';
 
-import './index.scss';
+import styles from './index.module.scss';
 import GoogleIcon from '../../images/google.png';
 
 const GoogleAuth = ({ isSignedIn, signIn, signOut }) => {
@@ -42,7 +42,7 @@ const GoogleAuth = ({ isSignedIn, signIn, signOut }) => {
   } else if (isSignedIn) {
     return (
       <Button
-        className="auth-button"
+        className={styles.auth_button}
         variant="outlined"
         color="primary"
         onClick={() => auth.signOut()}
@@ -53,7 +53,7 @@ const GoogleAuth = ({ isSignedIn, signIn, signOut }) => {
   } else {
     return (
       <Button
-        className="auth-button"
+        className={styles.auth_button}
         variant="outlined"
         color="primary"
         onClick={() => auth.signIn(auth)}
