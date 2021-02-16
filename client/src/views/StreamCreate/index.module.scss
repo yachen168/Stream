@@ -2,12 +2,4 @@
   max-width: 500px;
   margin: 0 auto;
   margin-top: 50px;
-
-  [class^='MuiFormControl-root'] + [class^='MuiFormControl-root'] {
-    margin-top: 20px;
-  }
-
-  button {
-    margin-top: 40px;
-  }
 }

@@ -1,0 +1,9 @@
+.stream_form {
+  [class^='MuiFormControl-root'] + [class^='MuiFormControl-root'] {
+    margin-top: 20px;
+  }
+
+  button {
+    margin-top: 40px;
+  }
+}

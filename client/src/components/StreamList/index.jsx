@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { fetchStreams } from '../../actions/streams';
 
-import AdminButtons from '../../components/AdminButton';
+import AdminButtons from '../AdminButtons';
 import CreateLink from '../../components/CreateLink';
 
 import CameraIcon from '../../images/camera.png';
@@ -15,7 +15,7 @@ const StreamList = ({ streams, fetchStreams, currentUserId, isSignedIn }) => {
 
   const renderAdminButtons = (stream) => {
     return stream.userId === currentUserId ? (
-      <AdminButtons onEdit={() => {}} onDelete={() => {}} />
+      <AdminButtons stream={stream} onDelete={() => {}} />
     ) : null;
   };
 

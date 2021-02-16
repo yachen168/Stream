@@ -1,15 +1,13 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
 import styles from './index.module.scss';
 
-const AdminButtons = ({ onEdit, onDelete }) => {
+const AdminButtons = ({ stream, onDelete }) => {
   return (
     <div className={styles.admin_buttons}>
-      <Button variant="contained" onClick={onEdit}>
-        編輯
-      </Button>
+      <Link to={`/streams/edit/${stream.id}`}>編輯</Link>
       <Button variant="contained" color="secondary" onClick={onDelete}>
         刪除
       </Button>

@@ -27,9 +27,9 @@ export default {
       throw new Error(error.data);
     }
   },
-  async PUT(url, body) {
+  async PATCH(url, body) {
     try {
-      const response = await backend.post(url, body);
+      const response = await backend.patch(url, body);
       return response.data;
     } catch (error) {
       throw new Error(error.data);

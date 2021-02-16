@@ -14,8 +14,8 @@ export const fetchStreams = () => async (dispatch) => {
   dispatch({ type: FETCH_STREAMS, payload: response });
 };
 
-export const fetchStream = (streamId) => async (dispatch) => {
-  const response = await API.GET(`/streams/${streamId}`);
+export const fetchStream = (id) => async (dispatch) => {
+  const response = await API.GET(`/streams/${id}`);
 
   dispatch({ type: FETCH_STREAM, payload: response });
 };
@@ -28,14 +28,15 @@ export const createStream = (formData) => async (dispatch, getState) => {
   history.push('/');
 };
 
-export const editStream = (streamId, formData) => async (dispatch) => {
-  const response = await API.PUT(`/streams/${streamId}`, formData);
+export const editStream = (id, formData) => async (dispatch) => {
+  const response = await API.PATCH(`/streams/${id}`, formData);
 
   dispatch({ type: EDIT_STREAM, payload: response });
+  history.push('/');
 };
 
-export const deleteStream = (streamId) => async (dispatch) => {
-  await API.DELETE(`/streams/${streamId}`);
+export const deleteStream = (id) => async (dispatch) => {
+  await API.DELETE(`/streams/${id}`);
 
-  dispatch({ type: DELETE_STREAM, payload: streamId });
+  dispatch({ type: DELETE_STREAM, payload: id });
 };
